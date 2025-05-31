@@ -1,0 +1,6 @@
+# Forzar la detección de Python para archivos .py
+*.py linguist-language=Python
+
+# Forzar la detección de SQL para archivos .sql y asegurar que sea detectable
+*.sql linguist-language=SQL
+*.sql linguist-detectable=true
