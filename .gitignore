@@ -1,0 +1,28 @@
+# Virtual Environment
+.venv/
+env/
+venv/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb-filter
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+
+# Data (uncomment if you have large data files you don't want to commit)
+# data/
+# *.csv
+# *.xlsx
+# *.zip
+
+# VS Code
+.vscode/
