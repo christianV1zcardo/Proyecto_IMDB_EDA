@@ -4,5 +4,7 @@ SELECT
     imdb_rating,  
     meta_score  
 FROM imdb_movies_clean  
-ORDER BY imdb_rating DESC, meta_score DESC
+ORDER BY 
+    imdb_rating DESC, 
+    meta_score DESC
 LIMIT 5;
