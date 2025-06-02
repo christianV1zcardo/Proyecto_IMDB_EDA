@@ -1,3 +1,4 @@
+-- PREGUNTA 3
 SELECT
     genre
 FROM 
