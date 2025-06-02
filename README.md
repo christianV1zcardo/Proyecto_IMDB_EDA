@@ -4,6 +4,51 @@ Este proyecto realiza un Análisis Exploratorio de Datos (EDA) sobre un dataset 
 
 El análisis se ha estructurado en varias preguntas clave, abordando aspectos como la valoración de películas, la distribución de géneros, las tendencias a lo largo del tiempo, la relación entre ingresos y ratings/popularidad, y el desempeño de directores y actores.
 
+## ¿Qué se hizo en este proyecto?
+
+El proceso de este EDA se puede resumir en los siguientes pasos, detallando las herramientas utilizadas en cada uno:
+
+1.  **Recopilación y Carga de Datos en SQLite:**
+    * Se partió de un dataset preexistente del Top 1000 de películas de IMDb.
+    * Para simular un entorno de base de datos y permitir consultas SQL directamente desde Python, **todos los datos limpios fueron cargados en una base de datos SQLite**. Esta base de datos actúa como el origen de datos para las consultas posteriores.
+
+2.  **Limpieza y Preprocesamiento de Datos con Pandas:**
+    * Antes del análisis, se realizaron tareas de limpieza y transformación utilizando la biblioteca **Pandas en Python** para asegurar la calidad de los datos.
+    * Esto incluyó el manejo de valores nulos, la conversión de tipos de datos (por ejemplo, asegurando que las columnas numéricas como ratings, ingresos y votos fueran tratadas como tal), y la estandarización de formatos donde fuera necesario.
+    * Un paso crucial fue la extracción y normalización de los géneros y las estrellas, ya que las películas a menudo tienen múltiples géneros/actores listados en una sola cadena de texto.
+
+3.  **Ejecución de Consultas SQL desde Python:**
+    * Para cada pregunta de investigación, se diseñaron y ejecutaron **consultas SQL específicas**.
+    * Estas consultas SQL fueron leídas desde archivos `.sql` (ubicados en la carpeta `sql/`) y ejecutadas contra la base de datos SQLite utilizando la función `pd.read_sql_query()` de **Pandas en Python**. Esto permitió aprovechar la potencia de SQL para agregaciones y filtrado directamente sobre los datos en la base de datos.
+
+4.  **Análisis Descriptivo con Pandas:**
+    * Los resultados de las consultas SQL fueron cargados en DataFrames de **Pandas en Python**.
+    * Sobre estos DataFrames, se calcularon estadísticas descriptivas clave (`.value_counts()`, `.mean()`, `.sum()`, etc.) para comprender la distribución y las características básicas de las principales variables, como ratings, ingresos, número de votos y años de lanzamiento.
+
+5.  **Análisis de Relaciones y Tendencias con Pandas y Visualizaciones:**
+    * Se exploraron las relaciones entre diferentes variables (por ejemplo, ingresos vs. ratings, ratings a lo largo del tiempo) utilizando operaciones de **Pandas** y aplicando transformaciones como el escalado de ratings y la conversión de unidades (millones para ingresos, miles para votos).
+    * Los resultados fueron visualizados utilizando las bibliotecas **Matplotlib y Seaborn en Python** para identificar correlaciones y patrones.
+
+6.  **Análisis de Entidades Clave (Directores y Actores) con Pandas y Visualizaciones:**
+    * Se identificaron y analizaron a los directores y actores más prolíficos y exitosos.
+    * Esto implicó agrupar los datos y calcular métricas como el número de películas, el rating promedio de sus obras y los ingresos totales generados, todo ello gestionado con **Pandas**.
+    * Las conclusiones fueron presentadas mediante gráficos de barras creados con **Matplotlib y Seaborn en Python**.
+
+7.  **Visualización de Datos con Matplotlib y Seaborn:**
+    * Un componente fundamental del EDA fue la creación de diversas visualizaciones (histogramas, gráficos de dispersión, gráficos de líneas y gráficos de barras) utilizando **Matplotlib y Seaborn en Python**. Estas visualizaciones se diseñaron para representar los hallazgos de manera clara e intuitiva, facilitando la interpretación de los patrones y tendencias.
+
+## Herramientas y Tecnologías Utilizadas
+
+Para llevar a cabo este análisis, se utilizaron las siguientes herramientas y bibliotecas:
+
+* **Python:** El lenguaje de programación principal para todo el análisis y la orquestación.
+* **Pandas:** Biblioteca fundamental para la manipulación, limpieza, transformación y análisis de datos estructurados (DataFrames).
+* **NumPy:** Biblioteca para operaciones numéricas y matemáticas eficientes, a menudo utilizada internamente por Pandas.
+* **SQLite:** Sistema de gestión de base de datos relacional ligero utilizado para almacenar los datos limpios y permitir consultas SQL.
+* **SQL (a través de `pandas.read_sql_query`):** Lenguaje estándar para interactuar con la base de datos SQLite y extraer subconjuntos de datos para el análisis específico de cada pregunta.
+* **Matplotlib:** Biblioteca de Python para la creación de gráficos estáticos, animados e interactivos en Python.
+* **Seaborn:** Biblioteca de visualización de datos basada en Matplotlib, que proporciona una interfaz de alto nivel para dibujar gráficos estadísticos atractivos e informativos.
+
 ## Hallazgos y Conclusiones del EDA
 
 A continuación, se presentan los hallazgos clave derivados del análisis de cada pregunta.
